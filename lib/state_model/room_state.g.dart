@@ -14,7 +14,7 @@ class _$RoomState extends RoomState {
   @override
   final BuiltMap<String, UserSummary> roomMembers;
   @override
-  final BuiltMap<String, BuiltMap<String, BuiltList<RoomEvent>>> reactions;
+  final Reactions reactions;
   @override
   final BuiltMap<String, SendRoomEventTask> sendRoomEventTasks;
 
@@ -106,14 +106,10 @@ class RoomStateBuilder implements Builder<RoomState, RoomStateBuilder> {
   set roomMembers(MapBuilder<String, UserSummary> roomMembers) =>
       _$this._roomMembers = roomMembers;
 
-  MapBuilder<String, BuiltMap<String, BuiltList<RoomEvent>>> _reactions;
-  MapBuilder<String, BuiltMap<String, BuiltList<RoomEvent>>> get reactions =>
-      _$this._reactions ??=
-          new MapBuilder<String, BuiltMap<String, BuiltList<RoomEvent>>>();
-  set reactions(
-          MapBuilder<String, BuiltMap<String, BuiltList<RoomEvent>>>
-              reactions) =>
-      _$this._reactions = reactions;
+  ReactionsBuilder _reactions;
+  ReactionsBuilder get reactions =>
+      _$this._reactions ??= new ReactionsBuilder();
+  set reactions(ReactionsBuilder reactions) => _$this._reactions = reactions;
 
   MapBuilder<String, SendRoomEventTask> _sendRoomEventTasks;
   MapBuilder<String, SendRoomEventTask> get sendRoomEventTasks =>

@@ -11,3 +11,5 @@ export 'state_model/timeline_event_state.dart';
 export 'state_model/user_summary.dart';
 export 'state_model/timestamped.dart';
 export 'state_model/state_event.dart';
+export 'state_model/reactions.dart';
+export 'state_model/reaction_event.dart';
