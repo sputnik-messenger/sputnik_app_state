@@ -8,6 +8,8 @@ abstract class AccountSummary implements Built<AccountSummary, AccountSummaryBui
 
   String get displayName;
 
+  String get serverUrl;
+
   @nullable
   Uri get avatarUrl;
 

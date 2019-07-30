@@ -12,6 +12,8 @@ class _$AccountSummary extends AccountSummary {
   @override
   final String displayName;
   @override
+  final String serverUrl;
+  @override
   final Uri avatarUrl;
   @override
   final String nextBatchSyncToken;
@@ -24,6 +26,7 @@ class _$AccountSummary extends AccountSummary {
   _$AccountSummary._(
       {this.userId,
       this.displayName,
+      this.serverUrl,
       this.avatarUrl,
       this.nextBatchSyncToken,
       this.loginResponse})
@@ -33,6 +36,9 @@ class _$AccountSummary extends AccountSummary {
     }
     if (displayName == null) {
       throw new BuiltValueNullFieldError('AccountSummary', 'displayName');
+    }
+    if (serverUrl == null) {
+      throw new BuiltValueNullFieldError('AccountSummary', 'serverUrl');
     }
     if (loginResponse == null) {
       throw new BuiltValueNullFieldError('AccountSummary', 'loginResponse');
@@ -53,6 +59,7 @@ class _$AccountSummary extends AccountSummary {
     return other is AccountSummary &&
         userId == other.userId &&
         displayName == other.displayName &&
+        serverUrl == other.serverUrl &&
         avatarUrl == other.avatarUrl &&
         nextBatchSyncToken == other.nextBatchSyncToken &&
         loginResponse == other.loginResponse;
@@ -62,7 +69,9 @@ class _$AccountSummary extends AccountSummary {
   int get hashCode {
     return $jf($jc(
         $jc(
-            $jc($jc($jc(0, userId.hashCode), displayName.hashCode),
+            $jc(
+                $jc($jc($jc(0, userId.hashCode), displayName.hashCode),
+                    serverUrl.hashCode),
                 avatarUrl.hashCode),
             nextBatchSyncToken.hashCode),
         loginResponse.hashCode));
@@ -73,6 +82,7 @@ class _$AccountSummary extends AccountSummary {
     return (newBuiltValueToStringHelper('AccountSummary')
           ..add('userId', userId)
           ..add('displayName', displayName)
+          ..add('serverUrl', serverUrl)
           ..add('avatarUrl', avatarUrl)
           ..add('nextBatchSyncToken', nextBatchSyncToken)
           ..add('loginResponse', loginResponse))
@@ -91,6 +101,10 @@ class AccountSummaryBuilder
   String _displayName;
   String get displayName => _$this._displayName;
   set displayName(String displayName) => _$this._displayName = displayName;
+
+  String _serverUrl;
+  String get serverUrl => _$this._serverUrl;
+  set serverUrl(String serverUrl) => _$this._serverUrl = serverUrl;
 
   Uri _avatarUrl;
   Uri get avatarUrl => _$this._avatarUrl;
@@ -112,6 +126,7 @@ class AccountSummaryBuilder
     if (_$v != null) {
       _userId = _$v.userId;
       _displayName = _$v.displayName;
+      _serverUrl = _$v.serverUrl;
       _avatarUrl = _$v.avatarUrl;
       _nextBatchSyncToken = _$v.nextBatchSyncToken;
       _loginResponse = _$v.loginResponse;
@@ -139,6 +154,7 @@ class AccountSummaryBuilder
         new _$AccountSummary._(
             userId: userId,
             displayName: displayName,
+            serverUrl: serverUrl,
             avatarUrl: avatarUrl,
             nextBatchSyncToken: nextBatchSyncToken,
             loginResponse: loginResponse);
